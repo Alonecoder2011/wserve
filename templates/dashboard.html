@@ -1,0 +1,23 @@
+<head>
+    <title>haha</title>
+</head>
+
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class=flashes>
+    {% for message in messages %}
+      <li>{{ message }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+{% block body %}{% endblock %}
+
+<body>
+    <form action="/api/auth/admin/command" method = "POST">
+    <p>command <input type = "text" name = "cmd" /></p>
+    <p><input type = "submit" value = "Submit" /></p>
+    </form>
+
+    <a href="/api/auth/admin/exec">Execute</a>
+</body>
